@@ -2,18 +2,17 @@
 import random
 number = random.randint(-10000, 10000)
 while True:
-    digit = abs(number) % 10
+    dig = abs(number) % 10
 
     if number < 0:
-        digit = -digit
+        dig = -dig
 
-    if digit > 5:
-        print("Last digit of {} is {} and is greater than 5".format(number, digit))
+    if dig > 5:
+        print("Last dig of{}is{}and is greater than 5".format(number, dig))
         break
-    elif digit == 0:
-        print("Last digit of {} is {} and is 0".format(number, digit))
+    elif dig == 0:
+        print("Last dig of {} is {} and is 0".format(number, dig))
         break
     else:
-        print("Last digit of {} is {} and is less than 6 and not 0".format(number, digit))
+        print("Last dig of{}is{}and is less than 6 and not 0".format(number, dig))
         break
-    
