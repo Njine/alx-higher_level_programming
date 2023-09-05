@@ -1,19 +1,15 @@
 #!/usr/bin/python3
 import random
-
-num_iterations = 5
-
-for _ in range(num_iterations):
-    number = random.randint(-10000, 10000)
+number = random.randint(-10000, 10000)
+while True:
     digit = abs(number) % 10
-    if number < 0:
-        digit = -digit
 
-    print("Last digit of {} is {} and is ".format(number, digit), end="")
-    
     if digit > 5:
-        print("greater than 5")
+        print("Last digit of {} is {} and is greater than 5".format(number, digit))
+        break
     elif digit == 0:
-        print("0")
+        print("Last digit of {} is {} and is 0".format(number, digit))
+        break
     else:
-        print("less than 6 and not 0")
+        print("Last digit of {} is {} and is less than 6 and not 0".format(number, digit))
+        break
