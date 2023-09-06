@@ -1,9 +1,7 @@
 #!/usr/bin/python3
-alphabet = 'abcdefghijklmnopqrstuvwxyz'
-result = ""
 
-for letter in alphabet:
-    if letter != 'e' and letter != 'q':
-        result += letter
+# Use a list comprehension to filter out 'q' and 'e'
+filtered_alphabet = ''.join([letter for letter in 'abcdefghijklmnopqrstuvwxyz' if letter != 'q' and letter != 'e'])
 
-print(result, end="")
+# Print the filtered alphabet without a newline character
+print(filtered_alphabet, end='')
