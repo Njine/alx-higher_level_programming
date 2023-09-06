@@ -2,5 +2,5 @@
 # 7-islower.py
 
 def islower(c):
-    """Check for lowercase characters."""
+    """Check for lowercase letters."""
     return 'a' <= c <= 'z'

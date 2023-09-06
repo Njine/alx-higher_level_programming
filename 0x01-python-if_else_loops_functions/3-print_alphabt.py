@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 alphabet = 'abcdefghijklmnopqrstuvwxyz'
+result = ""
 
 for letter in alphabet:
-    if letter == 'e' or letter == 'q':
-        continue
-    print(letter, end="")
+    if letter != 'e' and letter != 'q':
+        result += letter
+
+print(result, end="")
