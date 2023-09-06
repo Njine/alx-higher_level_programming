@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-# Loop through numbers from 0 to 98
+# Use a single loop to print numbers in both decimal and hexadecimal format
 for number in range(99):
-    # Use f-strings to format the output
-    print(f"{number} = 0x{number:02x}")
+    print("{} = 0x{:02x}".format(number, number))
