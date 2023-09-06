@@ -11,4 +11,3 @@ for digit1 in range(10):
             print("{:d}{:d}".format(digit1, digit2))
         else:
             print("{:d}{:d}".format(digit1, digit2), end=", ")
-
