@@ -1,7 +1,12 @@
 #!/usr/bin/python3
 
-# Use a list comprehension to filter out 'q' and 'e'
-filtered_alphabet = ''.join([letter for letter in 'abcdefghijklmnopqrstuvwxyz' if letter != 'q' and letter != 'e'])
+# Initialize an empty string
+filtered_alphabet = ""
+
+# Iterate through the alphabet and add characters except 'q' and 'e'
+for letter in 'abcdefghijklmnopqrstuvwxyz':
+    if letter != 'q' and letter != 'e':
+        filtered_alphabet += letter
 
 # Print the filtered alphabet without a newline character
-print(filtered_alphabet, end='')
+print("{}".format(filtered_alphabet), end="")
