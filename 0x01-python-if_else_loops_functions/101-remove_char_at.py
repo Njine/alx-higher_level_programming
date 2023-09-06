@@ -1,11 +1,5 @@
-def remove_char_at(str, n):
-    """Remove a character from a string at a specified index."""
-    if n < 0 or n >= len(str):
-        return str
-
-    result = ""
-    for i in range(len(str)):
-        if i != n:
-            result += str[i]
-
-    return result
+for i in range(122, 96, -1):
+    if i % 2:
+        print("{:c}".format(i - 32), end="")
+    else:
+        print("{:c}".format(i), end="")
