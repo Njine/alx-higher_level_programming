@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-for i in range(122, 96, -1):
-    if i % 2 == 0:
-        print("{:c}".format(i - 32), end="")
-    else:
-        print("{:c}".format(i), end="")
+def remove_char_at(input_str, n):
+    if n < 0 or n >= len(input_str):
+        return input_str
 
-    if i % 2:
-        print("{:c}".format(i - 32), end="")
-    else:
-        print("{:c}".format(i), end="")
+    result = ""
+    for i in range(len(input_str)):
+        if i != n:
+            result += input_str[i]
+
+    return result
