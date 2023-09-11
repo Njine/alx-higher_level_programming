@@ -8,6 +8,6 @@ def divisible_by_2(my_list=[]):
         my_list (list): The list of integers to check.
 
     Returns:
-        list: A list of Boolean values indicating whether each element is divisible by 2.
+        list: A list of Boolean values, check for even values
     """
     return [x % 2 == 0 for x in my_list]
