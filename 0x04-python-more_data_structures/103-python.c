@@ -25,14 +25,13 @@ length = (length > 10) ? 10 : length;
 
 printf("  first %lu bytes: ", length);
 
-i = 0;
-while (i < length - 1)
+for (i = 0; i < length; i++)
 {
-printf("%02x ", str[i] & 0xff);
-i++;
+printf("%02x", str[i] & 0xff);
+if (i < length - 1)
+printf(" ");
 }
-
-printf("%02x\n", str[length - 1] & 0xff);
+printf("\n");
 }
 
 /**
@@ -41,8 +40,8 @@ printf("%02x\n", str[length - 1] & 0xff);
 */
 void print_python_list(PyObject *p)
 {
-Py_ssize_t i = 0;
-PyObject *list;
+Py_ssize_t i;
+PyObject *list_item;
 
 if (!PyList_Check(p))
 return;
@@ -51,15 +50,13 @@ printf("[*] Python list info\n");
 printf("[*] Size of the Python List = %ld\n", PyList_Size(p));
 printf("[*] Allocated = %ld\n", ((PyListObject *)p)->allocated);
 
-while (i < PyList_Size(p))
+for (i = 0; i < PyList_Size(p); i++)
 {
-list = PySequence_GetItem(p, i);
-printf("Element %ld: %s\n", i, Py_TYPE(list)->tp_name);
+list_item = PyList_GetItem(p, i);
+printf("Element %ld: %s\n", i, Py_TYPE(list_item)->tp_name);
 
-if (strcmp(Py_TYPE(list)->tp_name, "bytes") == 0)
-print_python_bytes(list);
-
-i++;
+if (strcmp(Py_TYPE(list_item)->tp_name, "bytes") == 0)
+print_python_bytes(list_item);
 }
 }
 
