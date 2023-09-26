@@ -5,10 +5,10 @@
 class Square:
     """Creates  Square type."""
 
-    def __init__(self, dime=0):
+    def __init__(self, size=0):
         """Initialize Square with dime."""
-        self.__size = dime
-        if type(dime) is not int:
+        self.__size = size
+        if type(size) is not int:
             raise TypeError('dime must be an integer')
-        if dime < 0:
+        if size < 0:
             raise ValueError('dime must be >= 0')
