@@ -7,7 +7,7 @@ class Square:
 
     def __init__(self, dime=0):
         """Initialize Square with dime."""
-        self.__dime = dime
+        self.__size = dime
         if type(dime) is not int:
             raise TypeError('dime must be an integer')
         if dime < 0:
