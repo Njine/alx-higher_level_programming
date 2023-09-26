@@ -1,12 +1,10 @@
 #!/usr/bin/python3
-'''1-square.py: this python script defines a square,
-   private attribution of size'''
+"""Python script defines a square, private attribute of size."""
 
 
 class Square:
-        '''Makes  Square type'''
+    """Makes Square type."""
 
-        def __init__(self, dimention):
-            '''Initializes Square with size'''
-
-            self.__size = dimention
+    def __init__(self, dimension):
+        """Initialize Square with size."""
+        self.__size = dimension
