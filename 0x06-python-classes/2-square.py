@@ -5,10 +5,10 @@
 class Square:
     """Creates  Square type."""
 
-    def __init__(self, dimention=0):
+    def __init__(self, size=0):
         """Initialize Square with size."""
-        self.__dimention = dimention
-        if type(dimention) is not int:
+        self.__size = size
+        if type(size) is not int:
             raise TypeError('size in not an integer')
-        if dimention < 0:
+        if size < 0:
             raise ValueError('size is not greater or equal 0')
