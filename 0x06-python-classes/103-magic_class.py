@@ -3,19 +3,21 @@ import math
 
 
 class MagicClass:
-    """Create a circle area class."""
+    """ create circle area."""
 
-    def __init__(self, radius=0):
-        """Initialize."""
+    def __init__(self, r=0):
+        """ initializing """
         self.__radius = 0
-        if not isinstance(radius, (int, float)):
+        if type(r) is not int and type(r) is not float:
             raise TypeError('radius must be a number')
-        self.__radius = radius
-
-    def area(self):
-        """Define area."""
-        return (self.__radius ** 2 * math.pi)
+        self.__radius = r
 
     def circumference(self):
-        """Define circumference."""
+        """ function defining circuference """
         return ((2 * math.pi) * self.__radius)
+    
+    def area(self):
+        """ define area ."""
+        return (self.__radius ** 2 * math.pi)
+
+    
