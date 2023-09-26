@@ -7,7 +7,7 @@ class Square:
 
     def __init__(self, dimention=0):
         """Initialize Square with size."""
-        self.__size = dimention
+        self.__dimention = dimention
         if type(dimention) is not int:
             raise TypeError('size in not an integer')
         if dimention < 0:
