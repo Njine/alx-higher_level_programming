@@ -7,11 +7,19 @@ class Rectangle:
     """Define Rectangle type."""
 
     def __init__(self, width=0, height=0):
+        """
+        Initialize a new Rectangle instance.
+
+        Args:
+            width (int): The width of the rectangle (default is 0).
+            height (int): The height of the rectangle (default is 0).
+        """
         self.width = width
         self.height = height
 
     @property
     def width(self):
+        """Get the width of the rectangle."""
         return self.__width
 
     @width.setter
@@ -25,6 +33,7 @@ class Rectangle:
 
     @property
     def height(self):
+        """Get the height of the rectangle."""
         return self.__height
 
     @height.setter
@@ -37,9 +46,11 @@ class Rectangle:
             self.__height = value
 
     def area(self):
+        """Get the area of the rectangle."""
         return self.width * self.height
 
     def perimeter(self):
+        """Get the perimeter of the rectangle."""
         if self.width == 0 or self.height == 0:
             return 0
         else:
