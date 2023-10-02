@@ -4,14 +4,22 @@
 
 
 class Rectangle:
-    '''Defines the Rectangle type'''
+    """It defines Rectangle type."""
 
     def __init__(self, width=0, height=0):
-        self.width = width
-        self.height = height
+        """Rectangle type is defined."""
+        self.__width = width
+        self.__height = height
 
     @property
     def width(self):
+        """
+        Initialize a new Rectangle instance.
+
+        Args:
+            width (int): The width of the rectangle (default is 0).
+            height (int): The height of the rectangle (default is 0).
+        """
         return self.__width
 
     @width.setter
@@ -25,6 +33,7 @@ class Rectangle:
 
     @property
     def height(self):
+        """Get the height of the rectangle."""
         return self.__height
 
     @height.setter
