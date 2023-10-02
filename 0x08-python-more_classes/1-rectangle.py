@@ -1,17 +1,25 @@
 #!/usr/bin/python3
 
-'''It defines Rectangle type'''
+"""It defines Rectangle type."""
 
 
 class Rectangle:
-    '''Rectangle type is defined'''
+    """Rectangle type is defined."""
 
     def __init__(self, height=0, width=0):
+        """
+        Initialize a new Rectangle instance.
+
+        Args:
+            width (int): The width of the rectangle (default is 0).
+            height (int): The height of the rectangle (default is 0).
+        """
         self.__height = height
         self.__width = width
 
     @property
     def height(self):
+        """Get the height of the rectangle."""
         return self.__height
 
     @height.setter
@@ -21,9 +29,10 @@ class Rectangle:
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
-        
+
     @property
     def width(self):
+        """Get the width of the rectangle."""
         return self.__width
 
     @width.setter
@@ -33,4 +42,3 @@ class Rectangle:
         if value < 0:
             raise ValueError("width must be >= 0")
         self.__width = value
-
