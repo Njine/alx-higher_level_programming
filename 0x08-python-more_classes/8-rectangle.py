@@ -1,13 +1,12 @@
 #!/usr/bin/python3
 
-"""define Rectangle type."""
+"""Define Rectangle type."""
 
 
 class Rectangle:
     """Define the Rectangle type."""
 
     number_of_instances = 0
-    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         """Initialize a new Rectangle instance."""
@@ -20,14 +19,16 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return ""
         else:
+            rectangle_str = ""
             for h in range(self.__height):
-                for w in range(self.height - 1):
-                    print(str(self.print_symbol) * self.__width)
-                return str(self.print_symbol) * self.width
+                rectangle_str += str(self.print_symbol) * self.__width
+                if h < self.__height - 1:
+                    rectangle_str += "\n"
+            return rectangle_str
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
-        """Compare rectangles and get one with ""greater or equal area."""
+        """Compare rectangles and get one with greater or equal area."""
         if not isinstance(rect_1, Rectangle):
             raise TypeError('rect_1 must be an instance of Rectangle')
         if not isinstance(rect_2, Rectangle):
@@ -38,7 +39,7 @@ class Rectangle:
 
     def __repr__(self):
         """Return a string representation of the rectangle for object."""
-        return ("Rectangle({}, {})".format(self.width, self.height))
+        return "Rectangle({}, {})".format(self.width, self.height)
 
     def area(self):
         """Get the area of the rectangle."""
@@ -49,7 +50,7 @@ class Rectangle:
         if self.width == 0 or self.height == 0:
             return 0
         else:
-            return (2 * (self.height + self.width))
+            return 2 * (self.height + self.width)
 
     @property
     def width(self):
@@ -79,7 +80,17 @@ class Rectangle:
         else:
             self.__height = value
 
+    @property
+    def print_symbol(self):
+        """Get the print_symbol for the rectangle."""
+        return self.__print_symbol
+
+    @print_symbol.setter
+    def print_symbol(self, value):
+        """Set the print_symbol for the rectangle."""
+        self.__print_symbol = value
+
     def __del__(self):
-        """Destructor method called when instance is deleted."""
+        """Destructor method called when an instance is deleted."""
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
