@@ -5,6 +5,7 @@
 
 class Rectangle:
     """Define the Rectangle type."""
+
     number_of_instances = 0
     print_symbol = "#"
 
@@ -18,14 +19,14 @@ class Rectangle:
         """Return a string representation of the rectangle."""
         if self.__width == 0 or self.__height == 0:
             return ""
-        
+
         rectangle_str = ""
-        
+
         for h in range(self.__height):
             rectangle_str += str(self.print_symbol) * self.__width
             if h < self.__height - 1:
                 rectangle_str += "\n" 
-        
+
         return rectangle_str
 
     def __repr__(self):
