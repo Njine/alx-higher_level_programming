@@ -14,7 +14,21 @@ class Rectangle:
         self.height = height
         Rectangle.number_of_instances += 1
 
-        def area(self):
+    def __str__(self):
+        """Return a string representation of the rectangle."""
+        if self.__width == 0 or self.__height == 0:
+            return ""
+        else:
+            for h in range(self.__height):
+                for w in range(self.height - 1):
+                    print(str(self.print_symbol) * self.__width)
+                return str(self.print_symbol) * self.width
+
+    def __repr__(self):
+        """Return a string representation of the rectangle for object."""
+        return ("Rectangle({}, {})".format(self.width, self.height))
+
+    def area(self):
         """Get the area of the rectangle."""
         return self.width * self.height
 
@@ -52,20 +66,6 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         else:
             self.__height = value
-
-    def __str__(self):
-        """Return a string representation of the rectangle."""
-        if self.__width == 0 or self.__height == 0:
-            return ""
-        else:
-            for h in range(self.__height):
-                for w in range(self.height - 1):
-                    print(str(self.print_symbol) * self.__width)
-                return str(self.print_symbol) * self.width
-
-    def __repr__(self):
-        """Return a string representation of the rectangle for object."""
-        return ("Rectangle({}, {})".format(self.width, self.height))
 
     def __del__(self):
         """Destructor method called when instance is deleted."""
