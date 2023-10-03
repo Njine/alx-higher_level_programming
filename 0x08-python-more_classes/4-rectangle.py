@@ -16,14 +16,16 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return ""
         else:
+            rectangle_str = ""
             for h in range(self.__height):
-                for w in range(self.height - 1):
-                    print('#' * self.__width)
-                return '#' * self.width
+                rectangle_str += '#' * self.__width
+                if h < self.__height - 1:
+                    rectangle_str += '\n'
+            return rectangle_str
 
     def __repr__(self):
         """Return a string representation of the rectangle for object."""
-        return ("Rectangle({}, {})".format(self.width, self.height))
+        return "Rectangle({}, {})".format(self.width, self.height)
 
     def area(self):
         """Get the area of the rectangle."""
@@ -34,7 +36,7 @@ class Rectangle:
         if self.width == 0 or self.height == 0:
             return 0
         else:
-            return (2 * (self.height + self.width))
+            return 2 * (self.width + self.height)
 
     @property
     def width(self):
