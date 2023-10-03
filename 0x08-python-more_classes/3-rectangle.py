@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-"""define Rectangle type."""
+"""Define Rectangle type."""
 
 
 class Rectangle:
@@ -22,29 +22,32 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return ""
         else:
+            rectangle_str = ""
             for h in range(self.__height):
-                for w in range(self.height - 1):
-                    print('#' * self.__width)
-                return '#' * self.width
+                rectangle_str += '#' * self.__width
+                if h < self.__height - 1:
+                    rectangle_str += '\n'
+            return rectangle_str
 
     def area(self):
-        """Define area of rectange."""
+        """Calculate the area of the rectangle."""
         return self.width * self.height
 
     def perimeter(self):
-        """Define perimeter of rectange."""
+        """Calculate the perimeter of the rectangle."""
         if self.width == 0 or self.height == 0:
             return 0
         else:
-            return (2 * (self.height + self.width))
+            return 2 * (self.width + self.height)
 
     @property
     def width(self):
-        """Define width of rectange."""
+        """Get the width of the rectangle."""
         return self.__width
 
     @width.setter
     def width(self, value):
+        """Set the width of the rectangle with type and value checks."""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
@@ -54,11 +57,12 @@ class Rectangle:
 
     @property
     def height(self):
-        """Define height of rectange."""
+        """Get the height of the rectangle."""
         return self.__height
 
     @height.setter
     def height(self, value):
+        """Set the height of the rectangle with type and value checks."""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value < 0:
