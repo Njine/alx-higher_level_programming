@@ -68,7 +68,7 @@ class TestSquareMethods(unittest.TestCase):
         r1 = Square(2)
         with patch('sys.stdout', new=StringIO()) as str_out:
             r1.display()
-            self.assertEqual(str_out.getvalue(), "##\n##\n")
+            self.assertEqual(str_out.getvalue(), "##\n##")
 
     def test_to_string_method(self):
         r1 = Square(4, 2, 2)

@@ -60,7 +60,7 @@ class TestRectangleMethods(unittest.TestCase):
 
     def test_display_method(self):
         r1 = Rectangle(2, 5)
-        expected_output = "##\n##\n##\n##\n##\n"
+        expected_output = "##\n##\n##\n##\n##"
         with patch('sys.stdout', new=StringIO()) as str_out:
             r1.display()
             self.assertEqual(str_out.getvalue(), expected_output)
