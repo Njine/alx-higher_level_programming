@@ -1,7 +1,8 @@
--- Lists all cities in the hbtn_0d_usa database with their corresponding state names
+-- Lists all shows contained in hbtn_0d_tvshows that have at least one genre linked
 
--- List cities
-SELECT cities.id, cities.name AS city_name, states.name AS state_name
-FROM cities
-LEFT JOIN states ON states.id = cities.state_id
-ORDER BY cities.id;
+-- List shows with linked genres
+SELECT tv_shows.title, tv_show_genres.genre_id
+FROM tv_shows
+LEFT JOIN tv_show_genres ON tv_shows.id = tv_show_genres.show_id
+WHERE tv_show_genres.genre_id IS NOT NULL
+ORDER BY tv_shows.title, tv_show_genres.genre_id;
