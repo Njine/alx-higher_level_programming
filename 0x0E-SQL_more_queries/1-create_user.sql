@@ -1,16 +1,7 @@
--- MySQL script to create database hbtn_0d_usa and table cities
+-- Create MySQL server user user_0d_1
 
--- Create the database if it doesn't exist
-CREATE DATABASE IF NOT EXISTS hbtn_0d_usa;
+-- Create the user if it doesn't exist
+CREATE USER IF NOT EXISTS 'user_0d_1'@'localhost' IDENTIFIED BY 'user_0d_1_pwd';
 
--- Use the database
-USE hbtn_0d_usa;
-
--- Create the table if it doesn't exist
-CREATE TABLE IF NOT EXISTS cities (
-    id INT UNIQUE AUTO_INCREMENT NOT NULL,
-    state_id INT NOT NULL,
-    name VARCHAR(256) NOT NULL,
-    PRIMARY KEY (id),
-    FOREIGN KEY (state_id) REFERENCES states (id)
-);
+-- Grant all privileges on the MySQL server to the user
+GRANT ALL PRIVILEGES ON *.* TO 'user_0d_1'@'localhost' WITH GRANT OPTION;
