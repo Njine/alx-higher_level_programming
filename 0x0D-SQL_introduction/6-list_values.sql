@@ -1,2 +1,2 @@
--- MySQL script shows description of full table
-SHOW CREATE TABLE first_table;
+-- MySql script lists all rows of table
+SELECT * FROM first_table
