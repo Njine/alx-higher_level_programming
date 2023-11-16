@@ -1,5 +1,6 @@
 -- Lists all cities in the hbtn_0d_usa database with their corresponding state names
 
+-- List cities
 SELECT cities.id, cities.name, states.name AS state_name
 FROM cities
 JOIN states ON cities.state_id = states.id
