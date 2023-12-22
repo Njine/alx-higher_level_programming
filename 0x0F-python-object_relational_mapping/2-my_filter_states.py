@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Display states from database hbtn_0e_0_usa matching  provided name."""
+"""Display states from database hbtn_0e_0_usa matching provided name."""
 
 if __name__ == '__main__':
     import MySQLdb
@@ -20,8 +20,10 @@ if __name__ == '__main__':
     # Create a cursor object to interact with the database
     with db.cursor() as cursor:
         # Execute the SQL query to select states matching the provided name
-        cursor.execute("SELECT * FROM states WHERE name LIKE BINARY '%{}%'\
-            ORDER BY states.id ASC".format(state_name))
+        query = "SELECT * FROM states WHERE name LIKE BINARY '%{}%'".format(state_name)
+        query += " ORDER BY states.id ASC"
+        cursor.execute(query)
+
         # Fetch all rows from the result set
         rows = cursor.fetchall()
 

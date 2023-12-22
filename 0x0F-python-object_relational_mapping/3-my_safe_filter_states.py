@@ -24,8 +24,10 @@ if __name__ == '__main__':
     # Create a cursor object to interact with the database
     with db.cursor() as cursor:
         # Execute the SQL query to select states matching the provided name (using parameters)
-        cursor.execute("SELECT * FROM states WHERE name = (%s)\
-            ORDER BY states.id ASC", (state_name,))
+        query = "SELECT * FROM states WHERE name = (%s)"
+        query += " ORDER BY states.id ASC"
+        cursor.execute(query, (state_name,))
+
         # Fetch all rows from the result set
         rows = cursor.fetchall()
 

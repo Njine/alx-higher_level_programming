@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Prints the State object with the name passed as an argument from the database"""
+"""Prints State object with name passed as an argument from the database"""
 import sys
 from relationship_state import Base, State
 from relationship_city import City
