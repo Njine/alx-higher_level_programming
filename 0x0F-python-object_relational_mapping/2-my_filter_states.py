@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-"""Displays all states from the database hbtn_0e_0_usa matching the provided name"""
+"""Display states from database hbtn_0e_0_usa matching  provided name."""
 
 if __name__ == '__main__':
     import MySQLdb
     import sys
 
-    # Get MySQL username, password, database name, and state name from command line arguments
+    # Get MySQL username, password, database name, state name from command line arguments
     username, password, dbname, state_name = sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]
 
     # Connect to the MySQL server running on localhost at port 3306
