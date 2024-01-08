@@ -17,11 +17,12 @@ if __name__ == "__main__":
 
     try:
         parsed_response = response.json()
-        if parsed_response == {}:
+        if not parsed_response:
             print("No result")
         else:
-            print("[{}] {}".format(
+            result_format = "[{}] {}".format(
                 parsed_response.get("id"), parsed_response.get("name")
-            ))
+            )
+            print(result_format)
     except ValueError:
         print("Not a valid JSON")
